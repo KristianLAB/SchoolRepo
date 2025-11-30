@@ -1,0 +1,356 @@
+COMPARISON OPERATORS
+
+
+#   <   pienempi kuin / less than
+#   >   suurempi kuin / greater than
+#   <=  pienempi tai sama kuin / less than or equal
+#   >=  suurempi tai sama kuin / greater than or equal
+#   ==  sama kuin / equal to
+#   !=  EI sama kuin / not equal to
+
+
+BOOLEAN OPERATORS
+
+#   not     looginen ei / Logical NOT       Ei tosi --> epätosi             not True --> False
+#   and     looginen ja / Logical AND       Tosi ja epätosi --> epätosi     True and False  --> False
+#   or      looginen  tai / Logical OR      Tosi ja epätosi --> tosi        True or False --> True
+
+
+ESCAPE SEQUENCE
+
+#   \n      uusi rivi / newline
+#   \t      tab
+#   \"      kaksois hipsu " / double quote "
+#   \'      yksittäinen hipsu ' / single quote '
+
+
+IF-ELIF-ELSE (Ehtorakenteet / Conditional Statements)
+
+# Ehtorakenteilla ohjelman suoritus haarautuu eri poluille ehtojen perusteella.
+# if-lauseke tarkistaa ehdon, ja jos se on tosi (True), suoritetaan sisennnetty koodilohko.
+
+# IF (Jos)
+# if-lause suoritetaan, jos ehto on tosi.
+# 
+# ika = 18
+# if ika >= 18:
+#     print("Olet täysi-ikäinen")
+
+# IF-ELSE (Jos-Muuten)
+# else-lohko suoritetaan, jos if-ehto on epätosi.
+#
+# if ika >= 18:
+#     print("Olet täysi-ikäinen")
+# else:
+#     print("Olet alaikäinen")
+
+# IF-ELIF-ELSE (Jos-Muuten Jos-Muuten)
+# elif (else if) mahdollistaa useamman ehdon tarkistamisen.
+# Vain ensimmäinen tosi ehto suoritetaan, loput ohitetaan.
+#
+# arvosana = 85
+# if arvosana >= 90:
+#     print("Erinomainen")
+# elif arvosana >= 75:
+#     print("Hyvä")
+# elif arvosana >= 50:
+#     print("Tyydyttävä")
+# else:
+#     print("Hylätty")
+
+# !!! TÄRKEÄÄ - SISENNYKSET !!!
+# Python vaatii oikeat sisennykset (yleensä 4 välilyöntiä tai 1 tab).
+# Sisennnetty koodi kuuluu if/elif/else -lohkon sisään.
+# Väärät sisennykset aiheuttavat IndentationError -virheen.
+
+# EHTOJA VOI YHDISTÄÄ
+
+# and - molemmat ehdot täytyy olla tosia
+# if ika >= 18 and ika < 65:
+#     print("Työikäinen")
+
+# or - ainakin toisen ehdon täytyy olla tosi
+# if paiva == "lauantai" or paiva == "sunnuntai":
+#     print("Viikonloppu!")
+
+# not - kääntää ehdon päinvastaiseksi
+# if not on_valmis:
+#     print("Ei ole vielä valmis")
+
+# SISÄKKÄISET EHDOT (Nested if)
+
+# Voit laittaa if-lauseen toisen if-lauseen sisään.
+#
+# if ika >= 18:
+#     if on_ajokortti:
+#         print("Voit ajaa autoa")
+#     else:
+#         print("Tarvitset ajokortin")
+
+
+DEF FUNKTIO
+
+# Määriteään funktio, joka voidaan kutsua myöhemmin ohjelmassa.
+# Funktio voi ottaa sisään parametreja ja palauttaa arvon.
+# Parametrit ovat muuttujia, jotka välitetään funktiolle sen kutsumisen yhteydessä.
+# Palauttaa arvon funktiosta takaisin kutsuvaan kohtaan return - komennolla.
+# Funktio määritellään def - komennolla.
+# Funktio voidaan kutsua kirjoittamalla sen nimi ja sulut.
+# Funktio voidaan määritellä ilman parametreja tai palautusarvoa.
+
+
+FOR-LOOP
+
+#   Käytetään yleensä, kun tiedetään etukäteen kuinka monta kertaa silmukan halutaan toistuvan.
+
+WHILE-LOOP
+
+# Käytetään, kun haluat toistaa jotain niin kauan, kun jokin ehto on tosi.
+
+f
+while True:
+
+# while True käynnistää ikuisen silmukan, joka toistuu loputtomasti.
+# Silmukka jatkuu kunnes se keskeytetään break-komennolla tai ohjelman päättymisellä.
+# Käytetään esim. valikkojen toteutuksessa tai, kun halutaan toistaa toimintoa kunnes käyttäjä päättää lopettaa.
+# Ikuinen silmukka, joka toistaa jotain niin kauan, kunnes se keskeytetään jollain tavalla.
+# Lopetetaan Break - komennolla.
+
+# !!! Continue - komento hyppää silmukan seuraavaan kierrokseen,
+# eli se ohittaa alla olevan koodin ja palaa silmukan alkuun.
+
+
+TRY-EXCEPT (Virheenkäsittely / Error Handling)
+
+# try-except rakennetta käytetään virheiden käsittelyyn.
+# try-lohkossa kokeillaan koodia, joka saattaa aiheuttaa virheen.
+# except-lohko suoritetaan, jos try-lohkossa tapahtuu virhe.
+# Tämä estää ohjelman kaatumisen ja mahdollistaa virheilmoituksen näyttämisen käyttäjälle.
+
+# Esimerkki:
+try:
+    luku = int(input("Anna luku: "))
+except ValueError:
+    print("Virhe! Anna kelvollinen luku.")
+
+# except ValueError  # käsittelee vain ValueError-tyyppisen virheen (esim. tekstin muunto luvuksi epäonnistuu)
+# except:            # käsittelee kaikki virheet (ei suositella, koska ei tiedetä mitä virheitä tapahtuu)
+
+
+EXCEPT KeyboardInterrupt
+
+# KeyboardInterrupt tapahtuu, kun käyttäjä painaa Ctrl+C keskeyttääkseen ohjelman.
+# Käytetään usein while True -silmukoiden kanssa, jotta ohjelma voidaan sulkea siististi.
+# Tämä mahdollistaa viimeisten toimenpiteiden suorittamisen ennen ohjelman sulkemista.
+
+# Esimerkki:
+try:
+    while True:
+        # ohjelma pyörii
+except KeyboardInterrupt:
+    print("\nOhjelma suljettu käyttäjän toimesta.")
+
+
+EXCEPT EOFError
+
+# EOFError (End Of File Error) tapahtuu, kun input() ei saa enää syötettä.
+# Tämä voi tapahtua esim. kun käyttäjä painaa Ctrl+D (Linux/Mac) tai Ctrl+Z (Windows).
+# Tai kun ohjelma yrittää lukea automaattisesta syötteestä, joka loppuu kesken.
+# Hyödyllinen testiohjelmissa, joissa syöte tulee tiedostosta.
+
+# Esimerkki:
+try:
+    teksti = input("Anna teksti: ")
+except EOFError:
+    print("\nSyöte loppui.")
+
+
+
+#### !!! ------ !!! ####
+
+EXCEPT (KeyboardInterrupt, EOFError)
+# KeyboardInterrupt ja EOFError kannattaa usein laittaa yhdessä
+# Molemmat ovat tapoja, joilla käyttäjä tai järjestelmä lopettaa syötteen.
+# Käsittelemällä ne yhdessä vältetään koodin toistaminen.
+# 
+# Esimerkki:
+try:
+    while True:
+        teksti = input("Anna syöte: ")
+except (KeyboardInterrupt, EOFError):
+    print("\nOhjelma lopetettu.")
+#
+# Tämä käsittelee sekä Ctrl+C että Ctrl+D/Ctrl+Z samalla tavalla.
+
+FINALLY (always)
+
+# finally-lohko suoritetaan AINA, riippumatta siitä tapahtuuko virhe vai ei.
+# Suoritetaan myös silloin, kun try- tai except-lohkossa on return, break tai continue.
+# Käytetään esim. tiedostojen sulkemiseen, yhteyksien katkaisuun tai resurssien vapauttamiseen.
+# Varmistaa että tärkeät loppusiivousoperaatiot tehdään aina.
+
+# Esimerkki:
+try:
+    tiedosto = open("data.txt", "r")
+    sisalto = tiedosto.read()
+except FileNotFoundError:
+    print("Tiedostoa ei löydy.")
+finally:
+    tiedosto.close()  # Suljetaan tiedosto aina, oli virhe tai ei
+
+
+LISTAT (Lists)
+
+# Lista on muuttuva tietorakenne, joka voi sisältää useita arvoja.
+# Listat luodaan hakasulkeilla [ ] ja alkiot erotetaan pilkuilla.
+# Listan alkiot voivat olla eri tietotyyppejä (luvut, merkkijonot, jopa listoja).
+
+# Listan luominen:
+nimet = ["Anna", "Pekka", "Liisa"]
+numerot = [1, 2, 3, 4, 5]
+tyhja_lista = []
+
+# INDEKSOINTI (Indexing)
+
+# Listan alkioihin päästään käsiksi indeksillä. Indeksointi alkaa nollasta!
+ensimmainen_nimi = nimet[0]      # "Anna"
+toinen_nimi = nimet[1]            # "Pekka"
+viimeinen_nimi = nimet[-1]        # "Liisa" (negatiivinen indeksi = lopusta)
+
+# SLICING (Listan osien valinta)
+
+# Voit valita osan listasta slice-syntaksilla [alku:loppu]
+kaksi_ensimmaista = nimet[0:2]    # ["Anna", "Pekka"]
+alusta_kolmanteen = nimet[:3]     # ["Anna", "Pekka", "Liisa"]
+toisesta_loppuun = nimet[1:]      # ["Pekka", "Liisa"]
+
+# LISTAN METODIT (List Methods)
+
+# .append(arvo)                     #Lisää yhden alkion listan loppuun
+# nimet.append("Matti")             # nimet = ["Anna", "Pekka", "Liisa", "Matti"]
+
+# .remove(arvo)         - Poistaa ensimmäisen esiintymän tietystä arvosta
+# nimet.remove("Pekka")             # nimet = ["Anna", "Liisa", "Matti"]
+
+# .pop()                - Poistaa ja palauttaa viimeisen alkion (tai tietyn indeksin alkion)
+# viimeinen = nimet.pop()           # "Matti" poistetaan ja tallennetaan
+# toinen = nimet.pop(1)             # Poistaa indeksin 1 alkion
+
+# .insert(indeksi, arvo) - Lisää alkion tiettyyn kohtaan
+# nimet.insert(1, "Ville")          # Lisää "Ville" indeksiin 1
+
+# .sort()               - Järjestää listan aakkosjärjestykseen/numeroiden mukaan
+# numerot.sort()                    # [1, 2, 3, 4, 5]
+
+# .reverse()            - Kääntää listan järjestyksen
+# nimet.reverse()                   # Kääntää listan ympäri
+
+# .clear()              - Tyhjentää listan
+# nimet.clear()                     # nimet = []
+
+# len(lista)            - Palauttaa listan pituuden (montako alkiota)
+# pituus = len(nimet)               # 3 (jos nimet = ["Anna", "Pekka", "Liisa"])
+
+# LISTAN LÄPIKÄYNTI (Looping through a list)
+
+# for-silmukalla käydään lista läpi:
+for nimi in nimet:
+    print(nimi)
+
+# LISTAN TARKISTUKSET
+
+# in -operaattori tarkistaa, onko arvo listassa
+if "Anna" in nimet:
+    print("Anna löytyy listasta!")
+
+# LISTAN YHDISTÄMINEN
+
+# Listat voi yhdistää + -operaattorilla
+lista1 = [1, 2, 3]
+lista2 = [4, 5, 6]
+yhdistetty = lista1 + lista2      # [1, 2, 3, 4, 5, 6]
+
+
+TIEDOSTONKÄSITTELY (File Handling)
+
+# Tiedostonkäsittelyllä voidaan lukea ja kirjoittaa tiedostoja.
+# Tiedostot pitää avata ennen käyttöä ja sulkea käytön jälkeen.
+
+# TIEDOSTON AVAAMINEN - open()
+
+# open(tiedostonimi, moodi)
+# Moodit:
+#   "r"  - read (luku) - Tiedoston täytyy olla olemassa
+#   "w"  - write (kirjoitus) - Luo uuden tiedoston tai KORVAA vanhan
+#   "a"  - append (lisäys) - Lisää tiedoston loppuun, ei korvaa
+#   "x"  - create (luonti) - Luo uuden tiedoston, virhe jos on jo olemassa
+
+# TIEDOSTON LUKEMINEN
+
+# Koko tiedoston lukeminen kerralla:
+tiedosto = open("data.txt", "r")
+sisalto = tiedosto.read()
+print(sisalto)
+tiedosto.close()
+
+# Tiedoston lukeminen riveittäin (lista):
+tiedosto = open("data.txt", "r")
+rivit = tiedosto.readlines()      # Palauttaa listan, jossa jokainen rivi on alkio
+tiedosto.close()
+
+# Tiedoston lukeminen yksi rivi kerrallaan:
+tiedosto = open("data.txt", "r")
+for rivi in tiedosto:
+    print(rivi.strip())           # .strip() poistaa rivinvaihdon lopusta
+tiedosto.close()
+
+# TIEDOSTOON KIRJOITTAMINEN
+
+# Kirjoittaminen (KORVAA vanhan sisällön):
+tiedosto = open("data.txt", "w")
+tiedosto.write("Ensimmäinen rivi\n")
+tiedosto.write("Toinen rivi\n")
+tiedosto.close()
+
+# Lisääminen tiedoston loppuun:
+tiedosto = open("data.txt", "a")
+tiedosto.write("Uusi rivi loppuun\n")
+tiedosto.close()
+
+# WITH-RAKENNE (Context Manager) - SUOSITELTU!
+
+# with-rakenne sulkee tiedoston automaattisesti, vaikka tulisi virhe.
+# Ei tarvitse kutsua .close() -metodia erikseen.
+
+# Lukeminen with-rakenteella:
+with open("data.txt", "r") as tiedosto:
+    sisalto = tiedosto.read()
+    print(sisalto)
+# # Tiedosto sulkeutuu automaattisesti tässä
+
+# Kirjoittaminen with-rakenteella:
+with open("data.txt", "w") as tiedosto:
+    tiedosto.write("Tekstiä tiedostoon\n")
+
+# VIRHEENKÄSITTELY TIEDOSTOJEN KANSSA
+
+# try-except kannattaa käyttää, jos tiedosto ei välttämättä ole olemassa:
+try:
+    with open("data.txt", "r") as tiedosto:
+        sisalto = tiedosto.read()
+except FileNotFoundError:
+    print("Tiedostoa ei löydy!")
+
+# TIEDOSTON OLEMASSAOLON TARKISTUS
+
+import os
+if os.path.exists("data.txt"):
+    print("Tiedosto on olemassa")
+else:
+    print("Tiedostoa ei ole")
+
+# HYÖDYLLISIÄ VINKKEJÄ
+
+# .strip()      - Poistaa tyhjät merkit (välilyönnit, rivinvaihdot) alusta ja lopusta
+# .split()      - Jakaa merkkijonon listaksi (oletuksena välilyönnin kohdalta)
+# "\n"          - Rivinvaihto (täytyy lisätä itse kirjoitettaessa)
