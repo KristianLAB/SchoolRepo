@@ -1,0 +1,3 @@
+Built-in sorted 22200 ns
+Buble sort 15300 ns
+Quick sort 14900 ns
